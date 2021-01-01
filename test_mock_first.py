@@ -2,7 +2,7 @@
 import unittest
 from unittest import mock
 
-from mock_first import MockFirst
+from mock_first import MyMockFileFirst
 
 secrets = {
     'DEFAULT': {
@@ -15,7 +15,7 @@ secrets = {
 class TestMockFirst(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        cls.myclass = MockFirst()
+        cls.myclass = MyMockFileFirst()
 
     def test_variable_setup(self):
         self.assertEqual(self.myclass.do_something_with_secrets_value(), 'mockedSecretValueshello')

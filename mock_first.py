@@ -5,7 +5,7 @@ secrets_config = configparser.ConfigParser()
 secrets_config.read('secrets_file.conf')
 
 
-class MockFirst:
+class MyMockFileFirst:
     def my_method(self):
         print(secrets_config['DEFAULT']['secretkey'])
 
@@ -14,7 +14,7 @@ class MockFirst:
 
 
 def main():
-    mf = MockFirst()
+    mf = MyMockFileFirst()
     print(mf.do_something_with_secrets_value())
 
 
