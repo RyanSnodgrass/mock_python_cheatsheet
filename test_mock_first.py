@@ -5,7 +5,9 @@ from unittest import mock
 from mock_first import MockFirst
 
 secrets = {
-    'hello': 'superSecretValue'
+    'DEFAULT': {
+        'secretkey': 'mockedSecretValues',
+    }
 }
 
 
@@ -13,10 +15,11 @@ secrets = {
 class TestMockFirst(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        cls.mockfirst = MockFirst()
+        cls.myclass = MockFirst()
 
     def test_variable_setup(self):
-        self.assertEqual(self.mockfirst.secrets_config, secrets)
+        self.assertEqual(self.myclass.do_something_with_secrets_value(), 'mockedSecretValueshello')
+        self.assertNotEqual(self.myclass.do_something_with_secrets_value, 'superSecretValuehello')
 
 
 if __name__ == '__main__':

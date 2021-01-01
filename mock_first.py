@@ -9,10 +9,13 @@ class MockFirst:
     def my_method(self):
         print(secrets_config['DEFAULT']['secretkey'])
 
+    def do_something_with_secrets_value(self):
+        return secrets_config['DEFAULT']['secretkey'] + 'hello'
+
 
 def main():
     mf = MockFirst()
-    mf.my_method()
+    print(mf.do_something_with_secrets_value())
 
 
 if __name__ == '__main__':
