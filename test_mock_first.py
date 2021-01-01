@@ -17,3 +17,7 @@ class TestMockFirst(unittest.TestCase):
 
     def test_variable_setup(self):
         self.assertEqual(self.mockfirst.secrets_config, secrets)
+
+
+if __name__ == '__main__':
+    unittest.main()
