@@ -13,9 +13,14 @@ class MyMockFileFirst:
         return secrets_config['DEFAULT']['secretkey'] + 'hello'
 
 
+class MySecondMockFile(MyMockFileFirst):
+    def do_something_else(self):
+        return secrets_config['DEFAULT']['secretkey'] + 'world'
+
+
 def main():
-    mf = MyMockFileFirst()
-    print(mf.do_something_with_secrets_value())
+    mf = MySecondMockFile()
+    print(mf.do_something_else())
 
 
 if __name__ == '__main__':
